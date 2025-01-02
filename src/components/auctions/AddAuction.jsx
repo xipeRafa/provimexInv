@@ -68,6 +68,7 @@ export const AddAuction = ({ setAuction }) => {
   const di = useRef();
    const de = useRef();
    const ancho = useRef();
+   const precio = useRef();
   //const marca = useRef();
   // const itemImage = useRef();
   //const itemImageName = useRef();
@@ -106,6 +107,7 @@ export const AddAuction = ({ setAuction }) => {
       di: di.current.value,
       de: de.current.value,
       ancho: ancho.current.value,
+      precio: precio.current.value,
        //marca: marca.current.value,
 
       duration: dueDate,
@@ -199,15 +201,8 @@ export const AddAuction = ({ setAuction }) => {
                  <Form.Control type="text" required  onChange={(e)=>handleTallaState(e)} value={tallaState} placeholder='separar cada talla con una coma ,' />
               </Col>
             </Row>*/}
-               <Row>
-              <Col>
-                <Form.Group>
-                  <Form.Label>Descripción</Form.Label>
-                  <Form.Control type="textarea" required ref={description} />
-                </Form.Group>
-              </Col>
-            </Row>
-<hr />
+            
+
             <Row>
               <Col>
                 <Form.Group>
@@ -236,6 +231,30 @@ export const AddAuction = ({ setAuction }) => {
                 <Form.Group>
                   <Form.Label>Ancho</Form.Label>
                   <Form.Control type="number" required ref={ancho} />
+                </Form.Group>
+              </Col>
+            </Row>
+
+
+            <hr />
+
+
+              <Row>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Precio</Form.Label>
+                  <Form.Control type="number" required ref={precio} />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <hr />
+
+            <Row>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Descripción</Form.Label>
+                  <Form.Control type="textarea" required ref={description} />
                 </Form.Group>
               </Col>
             </Row>

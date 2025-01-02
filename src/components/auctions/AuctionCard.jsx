@@ -69,7 +69,13 @@ function QrFunction(){
         
         <hr />
 
+        <p> Precio: <span>{item.precio}</span></p>
+
+        <hr />
+
         <p> Descripción: <span>{item.description}</span></p>
+
+
 
 
         <hr/>
