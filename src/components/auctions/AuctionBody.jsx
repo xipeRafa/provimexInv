@@ -43,7 +43,7 @@ export const AuctionBody = () => {
       )}
 
 
-
+      {stateLogout ? (
 
         <div className='sliceButtons'>
 
@@ -91,7 +91,9 @@ export const AuctionBody = () => {
             <p className='sliceButtonsP'>De: {sliceState + 1} a: {items.length > sliceState + prodByPage ? sliceState + prodByPage : items.length}</p>
             <p className='sliceButtonsP'>Paginas de {prodByPage} Prod. c/u </p>
 
-        </div>
+        </div> ) : (
+        ''
+      )}
 
 
 
