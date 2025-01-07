@@ -43,7 +43,7 @@ export const AuctionBody = () => {
       )}
 
 
-      {stateLogout ? (
+      {!stateLogout ? (
 
         <div className='sliceButtons'>
 
