@@ -43,7 +43,7 @@ export const AuctionBody = () => {
       )}
 
 
-      {!stateLogout ? (
+      {localStorage.getItem('userEmailLS') !== null ? (
 
         <div className='sliceButtons'>
 
