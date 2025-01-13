@@ -110,6 +110,19 @@ function QrFunction(){
             Borrar
           </button>
 
+
+          <button
+            className="btn btn-info mx-1"
+            onClick={() => {
+              if (window.confirm(`Quiere Borrar este Documento? ${item.codigo}`)) {
+                  deleteById(item.id, item.imgName);
+                  setToggle(!toggle);
+                }
+              }}
+          >
+            Editar
+          </button>
+
     
           <QrFunction />
 

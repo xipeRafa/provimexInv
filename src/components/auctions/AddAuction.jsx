@@ -108,14 +108,14 @@ export const AddAuction = ({ setAuction }) => {
       di: di.current.value,
       de: de.current.value,
       ancho: ancho.current.value,
-      precio: precio.current.value,
-      precioCompra: precioCompra.current.value,
+      precio: Number(precio.current.value),
+      precioCompra: Number(precioCompra.current.value),
        //marca: marca.current.value,
 
       duration: dueDate,
 
       // tela: tela.current.value,
-       stock: Number(stock.current.value),
+      stock: Number(stock.current.value),
 
       // talla: tallaState,
       // sucursal: 'Hermosillo',
@@ -214,7 +214,6 @@ export const AddAuction = ({ setAuction }) => {
               </Col>
             </Row>
 
-            <hr />
 
              <Row>
               <Col>
@@ -225,7 +224,6 @@ export const AddAuction = ({ setAuction }) => {
               </Col>
             </Row>
 
-            <hr />
 
 
               <Row>
@@ -249,7 +247,6 @@ export const AddAuction = ({ setAuction }) => {
               </Col>
             </Row>
 
-            <hr />
 
             <Row>
               <Col>

@@ -79,24 +79,28 @@ const FireStoreDataProvider = (props) => {
 
   //============================= images functions end ===========================//
 
-  const deleteById = async (id, imgName) => {
+  const deleteById = async (id) => {
     const aDoc = doc(firestoreDB, 'inventario', id);
     try {
       await deleteDoc(aDoc);
 
-      const desertRef = ref(storageDocs, `projectFiles/${imgName}`);
+      // const desertRef = ref(storageDocs, `projectFiles/${imgName}`);
 
-      deleteObject(desertRef)
-        .then(() => {
-          console.log(imgName, 'se elimino de Storage');
-        })
-        .catch((error) => {
-          console.log('ocurrio un error: ', error);
-        });
+      // deleteObject(desertRef)
+      //   .then(() => {
+      //     console.log(imgName, 'se elimino de Storage');
+      //   })
+      //   .catch((error) => {
+      //     console.log('ocurrio un error: ', error);
+      //   });
     } catch (error) {
       console.error(error);
     }
   };
+
+
+
+
 
   const UpdateById = async (id, obj) => {
     const aDoc = doc(firestoreDB, 'inventario', id);
@@ -106,6 +110,10 @@ const FireStoreDataProvider = (props) => {
       console.error(error);
     }
   };
+
+
+
+
 
   return (
     <FireStoreDataContext.Provider
