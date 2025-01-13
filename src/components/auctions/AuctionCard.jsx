@@ -305,7 +305,7 @@ const submitForm = async (e) => {
               Cancelar
             </Button>
             <Button variant="primary" disabled={false} type="submit">
-              Guardar
+              Guardar Cambios
             </Button>
           </Modal.Footer>
         </form>
