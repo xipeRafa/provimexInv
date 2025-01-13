@@ -69,7 +69,15 @@ function QrFunction(){
         
         <hr />
 
-        <p> Precio: <span>{item.precio}</span></p>
+        <p> Precio Compra: <span>{item.precioCompra}</span></p>
+
+        <hr />
+
+        <p> Precio Venta: <span>{item.precio}</span></p>
+
+        <hr />
+
+        <p> Stock: <span>{item.stock}</span></p>
 
         <hr />
 

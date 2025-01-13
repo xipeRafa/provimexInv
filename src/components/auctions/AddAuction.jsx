@@ -69,12 +69,13 @@ export const AddAuction = ({ setAuction }) => {
    const de = useRef();
    const ancho = useRef();
    const precio = useRef();
+   const precioCompra = useRef();
   //const marca = useRef();
   // const itemImage = useRef();
   //const itemImageName = useRef();
   //const talla = useRef();
   // const tela = useRef();
-  // const stockHermosillo = useRef();
+  const stock = useRef();
 
   const description = useRef();
 
@@ -108,12 +109,13 @@ export const AddAuction = ({ setAuction }) => {
       de: de.current.value,
       ancho: ancho.current.value,
       precio: precio.current.value,
+      precioCompra: precioCompra.current.value,
        //marca: marca.current.value,
 
       duration: dueDate,
 
       // tela: tela.current.value,
-      // stockHermosillo: Number(stockHermosillo.current.value),
+       stock: Number(stock.current.value),
 
       // talla: tallaState,
       // sucursal: 'Hermosillo',
@@ -238,12 +240,33 @@ export const AddAuction = ({ setAuction }) => {
 
             <hr />
 
+            <Row>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Precio Compra</Form.Label>
+                  <Form.Control type="number" required ref={precioCompra} />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <hr />
+
+            <Row>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Precio Venta</Form.Label>
+                  <Form.Control type="number" required ref={precio} />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <hr />
 
               <Row>
               <Col>
                 <Form.Group>
-                  <Form.Label>Precio</Form.Label>
-                  <Form.Control type="number" required ref={precio} />
+                  <Form.Label>Stock</Form.Label>
+                  <Form.Control type="number" required ref={stock} />
                 </Form.Group>
               </Col>
             </Row>
