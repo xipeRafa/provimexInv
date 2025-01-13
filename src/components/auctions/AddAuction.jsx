@@ -175,36 +175,11 @@ export const AddAuction = ({ setAuction }) => {
                 </Form.Group>
               </Col>
             </Row>
-                 <hr/>
-        {/*    <Row>
-              <Col className="mb-2">
-                <Form.Label>para</Form.Label>
-                <Form.Control as="select" multiple={false} ref={para}>
-                  <option value="hombre">Hombre</option>
-                  <option value="mujer">Mujer</option>
-                </Form.Control>
-              </Col>
-            </Row>*/}
-{/*
-            <Row>
-              <Col className="mb-2">
-                <Form.Label>Categoria</Form.Label>
-                <Form.Control as="select" multiple={false} ref={category}>
-                  <option value="Sala">Sala</option>
-                  <option value="Recamara">Recamara</option>
-                  <option value="Comedor">Comedor</option>
-                  <option value="Decoracion">Decoracion</option>
-                </Form.Control>
-              </Col>
-            </Row>*/}
-          {/*  <Row>
-              <Col>
-                <Form.Label>Talla</Form.Label>
-                 <Form.Control type="text" required  onChange={(e)=>handleTallaState(e)} value={tallaState} placeholder='separar cada talla con una coma ,' />
-              </Col>
-            </Row>*/}
-            
 
+
+            <hr/>
+     
+          
             <Row>
               <Col>
                 <Form.Group>

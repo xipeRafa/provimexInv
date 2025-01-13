@@ -83,6 +83,7 @@ const FireStoreDataProvider = (props) => {
     const aDoc = doc(firestoreDB, 'inventario', id);
     try {
       await deleteDoc(aDoc);
+      setToggle(!toggle);
 
       // const desertRef = ref(storageDocs, `projectFiles/${imgName}`);
 
@@ -106,6 +107,7 @@ const FireStoreDataProvider = (props) => {
     const aDoc = doc(firestoreDB, 'inventario', id);
     try {
       await updateDoc(aDoc, obj);
+      setToggle(!toggle);
     } catch (error) {
       console.error(error);
     }
