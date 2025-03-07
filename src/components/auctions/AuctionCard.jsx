@@ -23,7 +23,7 @@ export const AuctionCard = ({ item }) => {
 
   const formateador = new Intl.DateTimeFormat("es-MX", { dateStyle: 'long', timeStyle: 'short' });
    
-  const milisegundosComoFecha = (milisegundos=Date.now()) => {
+  const milisegundosComoFecha = (milisegundos=0) => {
       return formateador.format(new Date(milisegundos));
   }; 
 
@@ -115,7 +115,7 @@ const submitForm = async (e) => {
       <div className="card-body p-4 ">
 
         {/*<p>Creado: {  new Date(item.duration).toLocaleDateString("es-ES", {year: 'numeric', month: 'long', day: 'numeric'})}</p>*/}
-        <p> {milisegundosComoFecha(item.duration)}  </p>
+        {/*<p> {milisegundosComoFecha(item.duration)}  </p>*/}
         {/*{item.id}*/}
 
         <hr/>
@@ -132,7 +132,7 @@ const submitForm = async (e) => {
         
         <hr />
        
-        <p> Ancho: <span>{item.ancho}</span></p>
+        <p> Altura: <span>{item.ancho}</span></p>
         
         <hr />
 
