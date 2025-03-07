@@ -23,7 +23,7 @@ export const AuctionCard = ({ item }) => {
 
   const formateador = new Intl.DateTimeFormat("es-MX", { dateStyle: 'long', timeStyle: 'short' });
    
-  const milisegundosComoFecha = (milisegundos) => {
+  const milisegundosComoFecha = (milisegundos=Date.now()) => {
       return formateador.format(new Date(milisegundos));
   }; 
 
@@ -168,6 +168,8 @@ const submitForm = async (e) => {
           <button
             className="btn btn-danger mb-2 mt-2"
             onClick={() => {
+
+              console.log(item.id)
               if (window.confirm(`Quiere Borrar este Documento? ${item.codigo}`)) {
                   deleteById(item.id);
                 }

@@ -55,6 +55,10 @@ const FireStoreDataProvider = (props) => {
         console.log('Error searching items', err);
       });
 
+
+
+
+
     isMounted = false;
   }, [toggle]);
 
@@ -70,6 +74,11 @@ const FireStoreDataProvider = (props) => {
     //     getDownloadURL(filesFolderRef).then((url) => {
     //       postBody.imgName = selectedFile.name;
     //       postBody.imgUrl = url;
+
+
+      // JSON.parse(localStorage.newArrProvimex).map(el=>{
+      //     addDoc(postCollection, el);
+      // })
           addDoc(postCollection, postBody);
           setToggle(!toggle);
       //   });
