@@ -10,7 +10,7 @@ export const AuctionBody = () => {
   const { items } = useContext(FireStoreDataContext);
   const { stateLogout } = useContext(AuthContext);
 
-  console.log(items);
+
 
 
           const[sliceState, setSliceState]=useState(0)
@@ -20,11 +20,92 @@ export const AuctionBody = () => {
           const [hmState, setHmState]=useState(true)
 
 
+
+          const[codigoState, setCodigoState]=useState('')
+          const[diState, setDiState]=useState()
+          const[deState, setDeState]=useState()
+          const[anchoState, setAnchoState]=useState()
+
+
+
+
   return (
+
+
     <div className="">
+
+
+
+
+
+
+
       {localStorage.getItem('userEmailLS') !== null && <AddAuction />}
 {/*<p className='sliceButtonsP'>De: {sliceState + 1} a: {items.length > sliceState + prodByPage ? sliceState + prodByPage : items.length}</p>*/}
+
+
+
+
+
+
+
+
+      <div className='filters'>
+          <label>Codigo:</label>
+          <input type='text' value={codigoState} onChange={(e)=>setCodigoState(e.target.value)}/>
+
+          <label>Diametro Interior:</label>
+          <input type='number' min='0' value={diState} onChange={(e)=>{setCodigoState(''),setDiState(Number(e.target.value))}}/>
+
+          <label>Diametro Exterior:</label>
+          <input type='number' min='0' value={deState} onChange={(e)=>{setCodigoState(''),setDeState(Number(e.target.value))}}/>
+
+          <label>Altura:</label>
+          <input type='number' min='0' value={anchoState} onChange={(e)=>{setCodigoState(''),setAnchoState(Number(e.target.value))}}/>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
       {stateLogout ? (
+
+
+            codigoState.length > 3 ?   
+
+   <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border ">
+
+          {items.sort((a, b) => {
+              const result = a.codigo.localeCompare(b.codigo);
+
+              return result === 0 ? result : a.codigo.localeCompare(b.codigo);
+          })
+
+          .filter(el=>el.codigo===codigoState)
+          
+
+
+          .slice(sliceState, sliceState + prodByPage).map((doc, i) => {
+            return localStorage.getItem('userEmailLS') !== null && <AuctionCard item={doc} key={i} />
+          })}
+
+        </div>
+
+
+
+
+ :
+
+
+
+
 
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border ">
 
@@ -34,13 +115,27 @@ export const AuctionBody = () => {
               return result === 0 ? result : a.codigo.localeCompare(b.codigo);
           })
 
-          // .filter(el=>el.codigo==='6222 M-C3 FAG')
+          .filter(el=>el.di===diState)
+          .filter(el=>el.de===deState)
+          .filter(el=>el.ancho===anchoState)
+
 
           .slice(sliceState, sliceState + prodByPage).map((doc, i) => {
             return localStorage.getItem('userEmailLS') !== null && <AuctionCard item={doc} key={i} />
           })}
 
         </div>
+
+
+
+
+
+
+
+
+
+
+
       ) : (
         ''
       )}
