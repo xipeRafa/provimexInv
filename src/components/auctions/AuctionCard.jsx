@@ -117,7 +117,7 @@ const submitForm = async (e) => {
 
         {/*<p>Creado: {  new Date(item.duration).toLocaleDateString("es-ES", {year: 'numeric', month: 'long', day: 'numeric'})}</p>*/}
         {/*<p> {milisegundosComoFecha(item.duration)}  </p>*/}
-        {/*{item.id}*/}
+        {item.id}
 
         <hr/>
         <p>Código: <span>{item.codigo}</span></p>

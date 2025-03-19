@@ -52,7 +52,12 @@ console.log(items)
 
       <div className='filters'>
           <label>Codigo:</label>
-          <input type='text' value={codigoState} onChange={(e)=>setCodigoState(e.target.value)}/>
+          <input type='text' value={codigoState} onChange={(e)=>{
+              setCodigoState(e.target.value)
+              setDiState(0)
+              setDeState(0)
+              setAnchoState(0)
+          }}/>
 
           <label>Diametro Interior:</label>
           <input type='number' min='0' value={diState} onChange={(e)=>{setCodigoState(''),setDiState(Number(e.target.value))}}/>
