@@ -48,7 +48,7 @@ console.log(items)
 
 
 
-
+{localStorage.getItem('userEmailLS') !== null ? (
 
       <div className='filters'>
           <label>Codigo:</label>
@@ -64,7 +64,9 @@ console.log(items)
           <input type='number' min='0' value={anchoState} onChange={(e)=>{setCodigoState(''),setAnchoState(Number(e.target.value))}}/>
       </div>
 
-
+) : (
+        ''
+      )}
 
 
 
