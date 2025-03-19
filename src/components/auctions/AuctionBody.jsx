@@ -141,7 +141,7 @@ export const AuctionBody = () => {
       )}
 
 
-      {localStorage.getItem('userEmailLS') !== null ? (
+      {/*{localStorage.getItem('userEmailLS') !== null ? (
 
         <div className='sliceButtons'>
 
@@ -189,7 +189,7 @@ export const AuctionBody = () => {
         </div> ) : (
         ''
       )}
-
+*/}
 
 
 
