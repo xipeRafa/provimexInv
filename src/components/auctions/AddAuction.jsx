@@ -57,7 +57,7 @@ export const AddAuction = ({ setAuction }) => {
       de: de.current.value,
       ancho: ancho.current.value,
       precio: Number(precio.current.value),
-      precioCompra: Number(precioCompra.current.value),
+      // precioCompra: Number(precioCompra.current.value),
       duration: dueDate,
       stock: Number(stock.current.value),
       description: description.current.value,
@@ -132,7 +132,7 @@ export const AddAuction = ({ setAuction }) => {
               <Row>
               <Col>
                 <Form.Group>
-                  <Form.Label>Ancho</Form.Label>
+                  <Form.Label>Altura</Form.Label>
                   <Form.Control type="number" required ref={ancho} />
                 </Form.Group>
               </Col>
@@ -141,14 +141,14 @@ export const AddAuction = ({ setAuction }) => {
 
             <hr />
 
-            <Row>
+         {/*   <Row>
               <Col>
                 <Form.Group>
                   <Form.Label>Precio Compra</Form.Label>
                   <Form.Control type="number" required ref={precioCompra} />
                 </Form.Group>
               </Col>
-            </Row>
+            </Row>*/}
 
 
             <Row>

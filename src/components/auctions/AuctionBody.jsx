@@ -10,7 +10,7 @@ export const AuctionBody = () => {
   const { items } = useContext(FireStoreDataContext);
   const { stateLogout } = useContext(AuthContext);
 
-
+console.log(items)
 
 
           const[sliceState, setSliceState]=useState(0)

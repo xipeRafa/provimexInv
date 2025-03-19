@@ -21,6 +21,8 @@ import {
 
 export const AuctionCard = ({ item }) => {
 
+  console.log(item)
+
   const formateador = new Intl.DateTimeFormat("es-MX", { dateStyle: 'long', timeStyle: 'short' });
    
   const milisegundosComoFecha = (milisegundos=0) => {
@@ -56,15 +58,15 @@ const [newObjEdit, setNewObjEdit]=useState({
   di:'',
   de: '',
   ancho: '',
-  precio: '',
-  precioCompra: '',
+  precio: 0,
+  // precioCompra: '',
   stock:'',
   description: ''
 })
 
 
 
-const {codigo, di,de,ancho,precio,precioCompra,stock,description} = newObjEdit
+const {codigo, di,de,ancho,precio,stock,description} = newObjEdit
 
 
 const handlerForm =(e)=>{
@@ -133,10 +135,10 @@ const submitForm = async (e) => {
         <p> Altura: <span>{item.ancho}</span></p>
         
         <hr />
-
+{/*
         <p> Precio Compra: <span>{item.precioCompra}</span></p>
 
-        <hr />
+        <hr />*/}
 
         <p> Precio Venta: <span>{item.precio}</span></p>
 
@@ -184,7 +186,7 @@ const submitForm = async (e) => {
 
       </div>
 
-
+{/*   modal editar */}
 
       <Modal
         centered
@@ -250,14 +252,14 @@ const submitForm = async (e) => {
 
             <hr />
 
-            <Row>
+          {/*  <Row>
               <Col>
                 <Form.Group>
                   <Form.Label>Precio Compra</Form.Label>
                   <Form.Control type="number" name='precioCompra' value={precioCompra} required onChange={(e)=>handlerForm(e)} />
                 </Form.Group>
               </Col>
-            </Row>
+            </Row>*/}
 
 
             <Row>
