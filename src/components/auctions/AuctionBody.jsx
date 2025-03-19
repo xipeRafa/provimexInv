@@ -22,22 +22,19 @@ export const AuctionBody = () => {
 
   return (
     <div className="">
-
-    {/*<button onClick={()=>setHmState(!hmState)}> {(hmState ? 'hombre' : 'mujer').toUpperCase()} </button>*/}
-    {/*.filter(el => el.para === (hmState ? 'hombre' : 'mujer'))*/}
-
       {localStorage.getItem('userEmailLS') !== null && <AddAuction />}
-
+{/*<p className='sliceButtonsP'>De: {sliceState + 1} a: {items.length > sliceState + prodByPage ? sliceState + prodByPage : items.length}</p>*/}
       {stateLogout ? (
-        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border mt-1">
+
+        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 p-5 g-3 border ">
 
           {items.sort((a, b) => {
-          const result = a.codigo.localeCompare(b.codigo);
+              const result = a.codigo.localeCompare(b.codigo);
 
-          return result === 0 ? result : a.codigo.localeCompare(b.codigo);
-        })
+              return result === 0 ? result : a.codigo.localeCompare(b.codigo);
+          })
 
-
+          // .filter(el=>el.codigo==='6222 M-C3 FAG')
 
           .slice(sliceState, sliceState + prodByPage).map((doc, i) => {
             return localStorage.getItem('userEmailLS') !== null && <AuctionCard item={doc} key={i} />
@@ -65,12 +62,9 @@ export const AuctionBody = () => {
 
 
 
-            <button className={sliceState === prodByPage || sliceState === 0 ? 'd-none' : 'button'} onClick={()=>{ 
-                                                                                                        setSliceState(0)
-                                                                                                        window.scrollTo(0,0) 
-                                                                                                    }
-                                                                                                  }>
-                                                                                                      ０
+            <button className={sliceState === prodByPage || sliceState === 0 ? 'd-none' : 'button'} 
+                    onClick={()=>{ setSliceState(0), window.scrollTo(0,0) } }>
+                  ０
             </button>   
 
 
@@ -95,7 +89,7 @@ export const AuctionBody = () => {
 
 
             <p className='sliceButtonsP'>De: {sliceState + 1} a: {items.length > sliceState + prodByPage ? sliceState + prodByPage : items.length}</p>
-            <p className='sliceButtonsP'>Paginas de {prodByPage} Prod. c/u </p>
+            <p className='sliceButtonsP'>Paginas de {prodByPage} Codigos c/u. Total Lista: {items.length}</p>
 
         </div> ) : (
         ''

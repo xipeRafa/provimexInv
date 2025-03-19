@@ -58,7 +58,6 @@ const [newObjEdit, setNewObjEdit]=useState({
   ancho: '',
   precio: '',
   precioCompra: '',
-  //duration: dueDate,
   stock:'',
   description: ''
 })
@@ -120,7 +119,6 @@ const submitForm = async (e) => {
 
         <hr/>
         <p>Código: <span>{item.codigo}</span></p>
-        {/*<p>para: <span>{item.para}</span></p>*/}
 
         <hr/>
 
@@ -155,12 +153,6 @@ const submitForm = async (e) => {
 
         <hr/>
 
-        {/*<p> Stock Hermosillo: <span>{item.stockHermosillo}</span></p>*/}
-        {/*<p> Precio: <span>{item.price} $ </span></p>*/}
-        {/*<p> Tallas: </p>*/}
-   {/*     {item?.talla?.map((el,i)=>(
-                          <b key={i}><span>{el }, </span></b>
-        ))}*/}
 
 
         
@@ -188,7 +180,6 @@ const submitForm = async (e) => {
 
 
 
-         {/*<button className="btn btn-dark btn-sm mt-1">IMPRIMIR QR</button>*/}
         </div>
 
       </div>

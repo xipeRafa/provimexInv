@@ -19,62 +19,18 @@ import { FireStoreDataContext } from '../../context/FireStoreDataContext';
 export const AddAuction = ({ setAuction }) => {
   const { handleFileAdd } = useContext(FireStoreDataContext);
 
-//   const[img, setImg]=useState()
-
-// const resizeFile = (file) =>
-//   new Promise((resolve) => {
-//     Resizer.imageFileResizer(
-//       file,
-//       600,
-//       600,
-//       "JPEG",
-//       120,
-//       0,
-//       (uri) => {resolve(uri);},"base64");
-//   });
-
-//   const onResize = async (event) => {
-//     const file = event.target.files[0];
-
-//     const image = await resizeFile(file);
-
-//     fetch(image).then(res => res.blob())
-//       .then(blob => {
-//           const file = new File([blob], Date.now()+'.jpeg',{ type: "image/jpeg" })
-//           setImg(file)
-//     })
-//   };
 
   const [showForm, setShowForm] = useState(false);
   const [error, setError] = useState('');
 
 
 
-    // const [tallaState, setTallaState]=useState('')
-
-
-
-
-  // const handleTallaState=(e)=>{
-  //     let str = e.target.value.toLowerCase()
-  //     let arr = str.split(',')
-  //     setTallaState(arr)
-  // }
-
-
   const codigo = useRef();
-  // const para = useRef();
-  //const category = useRef();
   const di = useRef();
    const de = useRef();
    const ancho = useRef();
    const precio = useRef();
    const precioCompra = useRef();
-  //const marca = useRef();
-  // const itemImage = useRef();
-  //const itemImageName = useRef();
-  //const talla = useRef();
-  // const tela = useRef();
   const stock = useRef();
 
   const description = useRef();
@@ -82,16 +38,11 @@ export const AddAuction = ({ setAuction }) => {
   const openForm = () => setShowForm(true);
   const closeForm = () => setShowForm(false);
 
-  // const imgTypes = ['image/png', 'image/jpeg', 'image/jpg'];
 
   const submitForm = async (e) => {
     e.preventDefault();
 
     setError('');
-
-    // if (!imgTypes.includes(itemImage.current?.files[0].type)) {
-    //   return setError('por favor use una imagen valida (png, jpeg, jpg)');
-    // }
 
     let currentDate = new Date();
 
@@ -102,29 +53,19 @@ export const AddAuction = ({ setAuction }) => {
     let newAuction = {
       email: localStorage.getItem('userEmailLS'),
       codigo: codigo.current.value,
-      // para: para.current.value,
-
-      //category: category.current.value,
       di: di.current.value,
       de: de.current.value,
       ancho: ancho.current.value,
       precio: Number(precio.current.value),
       precioCompra: Number(precioCompra.current.value),
-       //marca: marca.current.value,
-
       duration: dueDate,
-
-      // tela: tela.current.value,
       stock: Number(stock.current.value),
-
-      // talla: tallaState,
-      // sucursal: 'Hermosillo',
       description: description.current.value,
-    };
+    }
 
-    handleFileAdd(newAuction);
+    handleFileAdd(newAuction)
 
-    closeForm();
+    closeForm()
   };
 
   return (
@@ -153,20 +94,7 @@ export const AddAuction = ({ setAuction }) => {
                 {localStorage.getItem('userEmailLS')}
               </Col>
             </Row>
-      {/*      <Row>
-              <Col>
-                <Form.Label>Imagen</Form.Label>
-                <Form.Group>
-                  <Form.Control
-                    type="file"
-                    label="Cargar Foto"
-                    required
-                    ref={itemImage}
-                    onChange={onResize}
-                  />
-                </Form.Group>
-              </Col>
-            </Row>*/}
+   
             <Row>
               <Col>
                 <Form.Group>
@@ -254,23 +182,7 @@ export const AddAuction = ({ setAuction }) => {
               </Col>
             </Row>
 
-         {/*   <Row>
-              <Col className="mb-2">
-                <Form.Label>tela</Form.Label>
-                <Form.Control as="select" multiple={false} ref={tela}>
-                  <option value="algodon">algodon</option>
-                  <option value="lino">lino</option>
-                </Form.Control>
-              </Col>
-            </Row>*/}
-        {/*    <Row>
-              <Col>
-                <Form.Group>
-                  <Form.Label>Stock Hermosillo</Form.Label>
-                  <Form.Control type="number" required ref={stockHermosillo} />
-                </Form.Group>
-              </Col>
-            </Row>*/}
+ 
 
            
        
